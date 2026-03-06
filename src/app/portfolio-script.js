@@ -21,7 +21,7 @@ const portfolioData = {
     email: "syedsubhanhussain.icb@gmail.com",
     phone: "+91-8431323178",
     location: "Bidar, Karnataka",
-    resumeUrl: "#",
+    resumeUrl: "/resume.html",
     linkedin: "https://www.linkedin.com/in/syed-subhan-hussain-414675337",
     github: "https://github.com/SYEDSUBHANHUSSAIN",
     // Profile photo: put your image at public/profile.png, or use any URL
@@ -64,7 +64,9 @@ const portfolioData = {
       tags: ["Cyber Security", "Wireshark", "Nmap", "SIH", "Team Lead"],
       image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
       github: "https://github.com/SYEDSUBHANHUSSAIN/DEFENXIA",
-      demo: "#"
+      demo: "#",
+      apk: "/defentia.apk.apk",
+      video: "https://www.youtube.com/watch?v=OYz_V0XBqgw"
     },
     {
       title: "DEFENXIA – Mobile Security Application (Android)",
@@ -72,7 +74,9 @@ const portfolioData = {
       tags: ["Android", "Java", "Security", "GoPhish", "Team Lead"],
       image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=800",
       github: "https://github.com/SYEDSUBHANHUSSAIN/DEFENXIA",
-      demo: "#"
+      demo: "#",
+      apk: "/defentia.apk.apk",
+      video: "https://www.youtube.com/watch?v=OYz_V0XBqgw"
     }
   ],
 
@@ -81,51 +85,59 @@ const portfolioData = {
     {
       title: "Cisco Networking Basics",
       issuer: "Cisco",
-      date: "",
-      icon: "🌐"
+      date: "2024",
+      icon: "🌐",
+      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800"
     },
     {
       title: "Red Hat Linux Essentials",
       issuer: "Red Hat",
-      date: "",
-      icon: "🐧"
+      date: "2024",
+      icon: "🐧",
+      image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800"
     },
     {
       title: "Ethical Hacking & Networking",
       issuer: "Simplilearn",
-      date: "",
-      icon: "🔐"
+      date: "2023",
+      icon: "🔐",
+      image: "https://images.unsplash.com/photo-1510511459019-5efa7ae17353?w=800"
     },
     {
       title: "Cyber Security Training",
       issuer: "LearnTube",
-      date: "",
-      icon: "🛡️"
+      date: "2023",
+      icon: "🛡️",
+      image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800"
     },
     {
       title: "IT & Programming Courses",
       issuer: "Infosys Springboard",
-      date: "",
-      icon: "💻"
+      date: "2022",
+      icon: "💻",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800"
     }
   ],
 
   // Achievements
   achievements: [
     {
-      title: "Winner: Mini Project Competition (DEFENXIA)",
-      description: "Cash prize: ₹3,000. Developed fully working mobile security application.",
-      icon: "🏆"
+      title: "Winner: Mini Project Competition",
+      description: "Cash prize: ₹3,000 for developing DEFENXIA mobile security application.",
+      icon: "🏆",
+      image: "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?w=800"
     },
     {
       title: "Smart India Hackathon (SIH) – Finalist",
-      description: "PALS Cluster final participant. Presented DEFENXIA to industry evaluators.",
-      icon: "🥇"
+      description: "PALS Cluster final participant. Presented a comprehensive security solution to industry evaluators.",
+      icon: "🥇",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800"
     },
     {
       title: "Class Topper",
-      description: "Consistently maintained top academic performance (5th Semester).",
-      icon: "📚"
+      description: "Consistently maintained top academic performance through early semesters.",
+      icon: "📚",
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800"
     }
   ],
 
@@ -164,7 +176,10 @@ export function initPortfolio() {
 }
 
 function init() {
-  // Initialize all components
+  // Populate content first so elements exist in DOM
+  populateContent();
+
+  // Initialize all components after content is in DOM
   initCustomCursor();
   initParticles();
   initTypingAnimation();
@@ -175,9 +190,6 @@ function init() {
   initStatCounters();
   initBackToTop();
   initContactForm();
-  
-  // Populate content
-  populateContent();
   
   // Initialize 3D tilt effect for cards
   initCardTilt();
@@ -738,14 +750,18 @@ function populateProjects() {
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
           </a>
-          ${(project.demo && project.demo !== '#') ? `<a href="${project.demo}" class="project-link" target="_blank" rel="noopener" aria-label="Live Demo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>` : ''}
+          ${(project.demo && project.demo !== '#') ? `<a href="${project.demo}" class="project-link" title="Live Demo" target="_blank" rel="noopener" aria-label="Live Demo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>` : ''}
         </div>
       </div>
       <div class="project-content">
         <h3 class="project-title">${project.title}</h3>
         <p class="project-description">${project.description}</p>
-        <div class="project-tags">
+        <div class="project-tags" style="margin-bottom: 15px;">
           ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+        </div>
+        <div class="project-actions" style="display: flex; gap: 10px; flex-wrap: wrap;">
+          ${(project.apk && project.apk !== '#') ? `<a href="${project.apk}" class="btn" style="flex: 1; text-align: center; padding: 8px 15px; font-size: 14px; display: inline-flex; justify-content: center; align-items: center; gap: 5px;" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Download APK</a>` : ''}
+          ${(project.video && project.video !== '#') ? `<a href="${project.video}" class="btn btn-outline" style="flex: 1; justify-content: center; text-align: center; padding: 8px 15px; font-size: 14px; display: inline-flex; align-items: center; gap: 5px;" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg> Watch Demo Video</a>` : ''}
         </div>
       </div>
     </div>
@@ -757,11 +773,18 @@ function populateCertifications() {
   if (!certificationsGrid) return;
 
   certificationsGrid.innerHTML = portfolioData.certifications.map(cert => `
-    <div class="cert-card" data-aos="fade-up">
-      <div class="cert-icon">${cert.icon}</div>
-      <h3 class="cert-title">${cert.title}</h3>
-      <div class="cert-issuer">${cert.issuer}</div>
-      <div class="cert-date">${cert.date}</div>
+    <div class="project-card" data-aos="fade-up" style="height: 100%;">
+      <div class="project-image" style="height: 180px;">
+        <img src="${cert.image}" alt="${cert.title}" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+      </div>
+      <div class="project-content" style="padding: 20px;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div class="cert-icon" style="font-size: 24px; position: static; transform: none; box-shadow: none;">${cert.icon}</div>
+          <h3 class="cert-title" style="margin: 0; font-size: 1.1rem;">${cert.title}</h3>
+        </div>
+        <div class="cert-issuer" style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 5px;">${cert.issuer}</div>
+        <div class="cert-date" style="color: #00d4ff; font-weight: bold; font-size: 0.8rem;">${cert.date}</div>
+      </div>
     </div>
   `).join('');
 }
@@ -771,10 +794,17 @@ function populateAchievements() {
   if (!achievementsGrid) return;
 
   achievementsGrid.innerHTML = portfolioData.achievements.map(achievement => `
-    <div class="achievement-card" data-aos="fade-up">
-      <div class="achievement-icon">${achievement.icon}</div>
-      <h3 class="achievement-title">${achievement.title}</h3>
-      <p class="achievement-description">${achievement.description}</p>
+    <div class="project-card" data-aos="fade-up" style="height: 100%;">
+      <div class="project-image" style="height: 200px;">
+        <img src="${achievement.image}" alt="${achievement.title}" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+      </div>
+      <div class="project-content" style="padding: 20px;">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+          <div class="achievement-icon" style="font-size: 32px; position: static; transform: none; box-shadow: none;">${achievement.icon}</div>
+          <h3 class="achievement-title" style="margin: 0; font-size: 1.2rem; line-height: 1.4;">${achievement.title}</h3>
+        </div>
+        <p class="achievement-description" style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6;">${achievement.description}</p>
+      </div>
     </div>
   `).join('');
 }

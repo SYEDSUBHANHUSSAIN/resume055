@@ -200,6 +200,19 @@ export default function App() {
       <span class="section-tag">My Work</span>
       <h2 class="section-title">Featured Projects</h2>
       <p class="section-subtitle">DEFENXIA – SIH &amp; Android security solutions</p>
+      
+      <div style="margin-top: 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="/defentia.apk.apk" class="btn btn-primary magnetic" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-weight: bold;" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download APK of Application
+          <span class="btn-glow"></span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=OYz_V0XBqgw" class="btn btn-secondary magnetic" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-weight: bold;" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+          Watch Application Demo Video
+          <span class="btn-glow"></span>
+        </a>
+      </div>
     </div>
     
     <div class="projects-grid" id="projectsGrid">

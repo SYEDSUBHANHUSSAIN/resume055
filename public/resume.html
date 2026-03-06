@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syed Subhan Hussain - Resume</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .controls {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 15px;
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s, transform 0.1s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    .btn:active {
+      transform: translateY(0);
+    }
+    .resume-container {
+      max-width: 900px;
+      width: 100%;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .resume-page {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #eee;
+    }
+    .resume-page:last-child {
+      border-bottom: none;
+    }
+    
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .controls {
+        display: none;
+      }
+      .resume-container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+      }
+      .resume-page {
+        page-break-after: always;
+        max-width: 100%;
+        margin: 0;
+        border: none;
+      }
+    }
+    
+    /* Fallback placeholder style */
+    .placeholder {
+      padding: 50px;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="controls">
+    <button class="btn" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print / Save PDF
+    </button>
+  </div>
+
+  <div class="resume-container" id="resumeContainer">
+    <!-- Resume Pages -->
+    <img src="/resume-page-1.jpeg" alt="Resume Page 1" class="resume-page" onerror="this.onerror=null; this.src=''; this.alt='Please save your first resume image as public/resume-page-1.jpeg'; this.parentElement.innerHTML += '<div class=\'placeholder\'><h2>Waiting for resume images</h2><p>Please save your resume images in the <strong>public</strong> folder as:<br/>1. <code>resume-page-1.jpeg</code><br/>2. <code>resume-page-2.jpeg</code></p></div>'; this.style.display='none'; document.getElementById('page2').style.display='none';">
+    <img src="/resume-page-2.jpeg" alt="Resume Page 2" class="resume-page" id="page2" onerror="this.style.display='none'">
+  </div>
+
+</body>
+</html>
